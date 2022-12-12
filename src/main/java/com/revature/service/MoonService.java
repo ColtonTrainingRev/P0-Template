@@ -14,7 +14,7 @@ public class MoonService {
 	}
 
 	public List<Moon> getAllMoons() {
-		// TODO Auto-generated method stub
+        MoonDao.logger.info("In getAllMoons method");
 		return null;
 	}
 

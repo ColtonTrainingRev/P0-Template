@@ -2,36 +2,43 @@ package com.revature.repository;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.revature.models.Moon;
 
 public class MoonDao {
+
+	public static Logger logger = LoggerFactory.getLogger(MoonDao.class);
     
     public List<Moon> getAllMoons() {
-		// TODO Auto-generated method stub
+		logger.info("In getAllMoons method.");
 		return null;
 	}
 
 	public Moon getMoonByName(String username, String moonName) {
-		// TODO Auto-generated method stub
+		logger.info("In getMoonByName method.");	
 		return null;
 	}
 
 	public Moon getMoonById(String username, int moonId) {
-		// TODO Auto-generated method stub
+		logger.info("In getMoonById method.");
+		
 		return null;
 	}
 
 	public Moon createMoon(String username, Moon m) {
-		// TODO Auto-generated method stub
+		logger.info("In createMoon method.");
 		return null;
 	}
 
 	public void deleteMoonById(int moonId) {
-		// TODO Auto-generated method stub
+		logger.info("In deleteMoonById method.");
+
 	}
 
 	public List<Moon> getMoonsFromPlanet(int planetId) {
-		// TODO Auto-generated method stub
+		logger.info("In getMoonsFromPlanet method.");
 		return null;
 	}
 }
