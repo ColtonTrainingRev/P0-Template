@@ -7,7 +7,7 @@
 
     </appender>
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>logs/staticlogs.log</file>
+        <file>logs/lifespanlogs.log</file>
         <append>true</append>
         <encoder>
             <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
@@ -15,7 +15,10 @@
     </appender>
 
     <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/rollongFile.log</file>
+        <file>logs/rollingFile.log</file> 
+        <!--Tried: P0-Template/logs/rollingFile.log unsuccessful
+            Tried: E:/Project-0Repo/P0-Template/src/main/ unsuccessful 
+            Tried: src/main/logs/rollingFile.log unsuccessful-->
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logs/rollingLogFile.%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -23,14 +26,15 @@
             <totalSizeCap>3GB</totalSizeCap>
         </rollingPolicy>
         <encoder>
-
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <!-- <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern> unsuccessful -->
         </encoder>
     </appender>
 
-    <root level="DEBUG">
-        <appender-ref ref="STDOUT"/>
-        <!-- <appender-ref ref="ROLLING"/>
-        <appender-ref ref="FILE"/> -->
+    <root level="INFO">
+        <appender-ref ref="ROLLING"/>
+        <appender-ref ref="FILE"/>
+        <!--<appender-ref ref="STDOUT"/> -->
     </root>
 
 </configuration>

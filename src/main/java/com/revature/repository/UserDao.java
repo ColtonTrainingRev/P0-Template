@@ -18,6 +18,9 @@ public class UserDao {
 	public static Logger logger = LoggerFactory.getLogger(UserDao.class);
 
 
+    /*
+     * getUserByUsername executed and works as expected?: PASS
+     */
     public User getUserByUsername(String username){
         logger.info("In getUserByUsername method");
 
@@ -38,6 +41,9 @@ public class UserDao {
         }
     }
 
+    /*
+     * createUser executed and works as expected?: PASS
+     */
     public User createUser(UsernamePasswordAuthentication registerRequest){
         logger.info("In createUser method");
         /*
@@ -85,12 +91,12 @@ public class UserDao {
         }
     }
 
-    public static void main(String[] args){
-        UserDao dao = new UserDao();
-        UsernamePasswordAuthentication newUser = new UsernamePasswordAuthentication();
-        newUser.setUsername("Java");
-        newUser.setPassword("I want Spring");
-        // System.out.println(dao.createUser(newUser).getId());
-        System.out.println(dao.getUserByUsername("lombok"));
-    }
+    // public static void main(String[] args){
+    //     UserDao dao = new UserDao();
+    //     UsernamePasswordAuthentication newUser = new UsernamePasswordAuthentication();
+    //     newUser.setUsername("Jon Snow");
+    //     newUser.setPassword("Winter is Coming");
+    //     System.out.println(dao.createUser(newUser).getId());
+    //     System.out.println(dao.getUserByUsername("Jon Snow"));
+    // }
 }
